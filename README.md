@@ -7,7 +7,7 @@
 ***
 To get the repo on your local machine:
 * In folder of your choice run "git init" to create a new repo
-* Then run "git remote add [name_of_remote] https://github.com/Clemson3720/Team6-Cart.git"
+* Then run "git remote add [name_of_remote] https://github.com/strong-pointer/Cart-API.git"
   * where [name_of_remote] can be whatever you want, recommended: origin
 * Afterwards, run "git fetch", followed by "git pull [name_of_remote] main"
   * *if your local branch is named "master", you will have to rename before pushing to this repo. To do so run "git branch -m master main"*
