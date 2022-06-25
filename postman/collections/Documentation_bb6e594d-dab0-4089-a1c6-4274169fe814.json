@@ -1,0 +1,1457 @@
+{
+    "info": {
+        "_postman_id": "dd6f6b6f-548a-4ece-abe6-18b0e4368b58",
+        "name": "Documentation",
+        "description": "### An API to Track and Represent a Cart for a Customer\n* Add item(s) to cart\n* Get cart by cart id\n* Remove item(s) from cart\n* Update cart - decrement/increment item quantity\n* Emptying cart\n* Add and remove promos\n* Delete a cart\n* Handles calculations\n* Tracking how long a cart has been alive for\n",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "carts",
+            "item": [
+                {
+                    "name": "{cart ID}",
+                    "item": [
+                        {
+                            "name": "{product ID}/{product Modifier}",
+                            "item": [
+                                {
+                                    "name": "/carts/:cartID/:productID/:productModifier",
+                                    "id": "6d10e629-869f-4df1-9040-60e4106fcfc7",
+                                    "request": {
+                                        "method": "POST",
+                                        "header": [
+                                            {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID/:productID/:productModifier",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID",
+                                                ":productID",
+                                                ":productModifier"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                },
+                                                {
+                                                    "key": "productID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the product"
+                                                },
+                                                {
+                                                    "key": "productModifier",
+                                                    "value": "irure est",
+                                                    "description": "(Required) Amount of product"
+                                                }
+                                            ]
+                                        },
+                                        "description": "Product Modification"
+                                    },
+                                    "response": [
+                                        {
+                                            "id": "636d58fb-2b58-422e-bce3-321320ebe7b3",
+                                            "name": "Updated product modifier",
+                                            "originalRequest": {
+                                                "method": "POST",
+                                                "header": [
+                                                    {
+                                                        "description": "Added as a part of security scheme: basic",
+                                                        "key": "Authorization",
+                                                        "value": "Basic <credentials>"
+                                                    }
+                                                ],
+                                                "url": {
+                                                    "raw": "{{baseUrl}}/carts/:cartID/:productID/:productModifier",
+                                                    "host": [
+                                                        "{{baseUrl}}"
+                                                    ],
+                                                    "path": [
+                                                        "carts",
+                                                        ":cartID",
+                                                        ":productID",
+                                                        ":productModifier"
+                                                    ],
+                                                    "variable": [
+                                                        {
+                                                            "key": "cartID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the cart"
+                                                        },
+                                                        {
+                                                            "key": "productID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the product"
+                                                        },
+                                                        {
+                                                            "key": "productModifier",
+                                                            "value": "irure est",
+                                                            "description": "(Required) Amount of product"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "status": "OK",
+                                            "code": 200,
+                                            "_postman_previewlanguage": "json",
+                                            "header": [
+                                                {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                }
+                                            ],
+                                            "cookie": [],
+                                            "responseTime": null,
+                                            "body": "{\n \"cartID\": 7403430,\n \"customerID\": -34374397,\n \"productID\": 37007688,\n \"quantity\": -92994254,\n \"cartTime\": 17610842,\n \"productModifier\": \"dolore consectetur minim laborum ut\",\n \"orderID\": \"culpa aliquip proident velit in\"\n}"
+                                        },
+                                        {
+                                            "id": "1c4ff51a-5b78-4448-8333-d31331ef2c6a",
+                                            "name": "Unexpected error",
+                                            "originalRequest": {
+                                                "method": "POST",
+                                                "header": [
+                                                    {
+                                                        "description": "Added as a part of security scheme: basic",
+                                                        "key": "Authorization",
+                                                        "value": "Basic <credentials>"
+                                                    }
+                                                ],
+                                                "url": {
+                                                    "raw": "{{baseUrl}}/carts/:cartID/:productID/:productModifier",
+                                                    "host": [
+                                                        "{{baseUrl}}"
+                                                    ],
+                                                    "path": [
+                                                        "carts",
+                                                        ":cartID",
+                                                        ":productID",
+                                                        ":productModifier"
+                                                    ],
+                                                    "variable": [
+                                                        {
+                                                            "key": "cartID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the cart"
+                                                        },
+                                                        {
+                                                            "key": "productID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the product"
+                                                        },
+                                                        {
+                                                            "key": "productModifier",
+                                                            "value": "irure est",
+                                                            "description": "(Required) Amount of product"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "status": "Bad Request",
+                                            "code": 400,
+                                            "_postman_previewlanguage": "json",
+                                            "header": [
+                                                {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                }
+                                            ],
+                                            "cookie": [],
+                                            "responseTime": null,
+                                            "body": "{}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "/carts/:cartID/:productID/:productModifier",
+                                    "id": "12b16104-d3e3-46d8-8f28-396367a1c51c",
+                                    "request": {
+                                        "method": "DELETE",
+                                        "header": [
+                                            {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID/:productID/:productModifier",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID",
+                                                ":productID",
+                                                ":productModifier"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                },
+                                                {
+                                                    "key": "productID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the product"
+                                                },
+                                                {
+                                                    "key": "productModifier",
+                                                    "value": "irure est",
+                                                    "description": "(Required) Amount of product"
+                                                }
+                                            ]
+                                        },
+                                        "description": "Delete from cart"
+                                    },
+                                    "response": [
+                                        {
+                                            "id": "5cf480ca-8b0c-4490-8a80-b6dede571efb",
+                                            "name": "Delete item from cart",
+                                            "originalRequest": {
+                                                "method": "DELETE",
+                                                "header": [
+                                                    {
+                                                        "description": "Added as a part of security scheme: basic",
+                                                        "key": "Authorization",
+                                                        "value": "Basic <credentials>"
+                                                    }
+                                                ],
+                                                "url": {
+                                                    "raw": "{{baseUrl}}/carts/:cartID/:productID/:productModifier",
+                                                    "host": [
+                                                        "{{baseUrl}}"
+                                                    ],
+                                                    "path": [
+                                                        "carts",
+                                                        ":cartID",
+                                                        ":productID",
+                                                        ":productModifier"
+                                                    ],
+                                                    "variable": [
+                                                        {
+                                                            "key": "cartID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the cart"
+                                                        },
+                                                        {
+                                                            "key": "productID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the product"
+                                                        },
+                                                        {
+                                                            "key": "productModifier",
+                                                            "value": "irure est",
+                                                            "description": "(Required) Amount of product"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "status": "OK",
+                                            "code": 200,
+                                            "_postman_previewlanguage": "text",
+                                            "header": [
+                                                {
+                                                    "disabled": false,
+                                                    "description": {
+                                                        "content": "Delete item",
+                                                        "type": "text/plain"
+                                                    },
+                                                    "key": "x-next",
+                                                    "value": "irure est"
+                                                },
+                                                {
+                                                    "key": "Content-Type",
+                                                    "value": "text/plain"
+                                                }
+                                            ],
+                                            "cookie": [],
+                                            "responseTime": null,
+                                            "body": ""
+                                        },
+                                        {
+                                            "id": "4ecc39a8-4243-4886-8d52-9fa7b7af100a",
+                                            "name": "Unexpected error",
+                                            "originalRequest": {
+                                                "method": "DELETE",
+                                                "header": [
+                                                    {
+                                                        "description": "Added as a part of security scheme: basic",
+                                                        "key": "Authorization",
+                                                        "value": "Basic <credentials>"
+                                                    }
+                                                ],
+                                                "url": {
+                                                    "raw": "{{baseUrl}}/carts/:cartID/:productID/:productModifier",
+                                                    "host": [
+                                                        "{{baseUrl}}"
+                                                    ],
+                                                    "path": [
+                                                        "carts",
+                                                        ":cartID",
+                                                        ":productID",
+                                                        ":productModifier"
+                                                    ],
+                                                    "variable": [
+                                                        {
+                                                            "key": "cartID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the cart"
+                                                        },
+                                                        {
+                                                            "key": "productID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the product"
+                                                        },
+                                                        {
+                                                            "key": "productModifier",
+                                                            "value": "irure est",
+                                                            "description": "(Required) Amount of product"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "status": "Bad Request",
+                                            "code": 400,
+                                            "_postman_previewlanguage": "json",
+                                            "header": [
+                                                {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                }
+                                            ],
+                                            "cookie": [],
+                                            "responseTime": null,
+                                            "body": "{}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "/carts/:cartID/:productID/:productModifier/:quantity",
+                                    "id": "3d6ce6b9-9bcf-41c2-92e9-afef2783eef3",
+                                    "request": {
+                                        "method": "PUT",
+                                        "header": [
+                                            {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID/:productID/:productModifier/:quantity",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID",
+                                                ":productID",
+                                                ":productModifier",
+                                                ":quantity"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                },
+                                                {
+                                                    "key": "productID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the product"
+                                                },
+                                                {
+                                                    "key": "productModifier",
+                                                    "value": "irure est",
+                                                    "description": "(Required) Modification of product"
+                                                },
+                                                {
+                                                    "key": "quantity",
+                                                    "value": "12114183",
+                                                    "description": "(Required) Quantity of products"
+                                                }
+                                            ]
+                                        },
+                                        "description": "Update Product Quantity"
+                                    },
+                                    "response": [
+                                        {
+                                            "id": "a11dbc27-1343-44ba-a7b7-ba476e2f92b9",
+                                            "name": "Updated product quantity",
+                                            "originalRequest": {
+                                                "method": "PUT",
+                                                "header": [
+                                                    {
+                                                        "description": "Added as a part of security scheme: basic",
+                                                        "key": "Authorization",
+                                                        "value": "Basic <credentials>"
+                                                    }
+                                                ],
+                                                "url": {
+                                                    "raw": "{{baseUrl}}/carts/:cartID/:productID/:productModifier/:quantity",
+                                                    "host": [
+                                                        "{{baseUrl}}"
+                                                    ],
+                                                    "path": [
+                                                        "carts",
+                                                        ":cartID",
+                                                        ":productID",
+                                                        ":productModifier",
+                                                        ":quantity"
+                                                    ],
+                                                    "variable": [
+                                                        {
+                                                            "key": "cartID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the cart"
+                                                        },
+                                                        {
+                                                            "key": "productID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the product"
+                                                        },
+                                                        {
+                                                            "key": "productModifier",
+                                                            "value": "irure est",
+                                                            "description": "(Required) Modification of product"
+                                                        },
+                                                        {
+                                                            "key": "quantity",
+                                                            "value": "12114183",
+                                                            "description": "(Required) Quantity of products"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "status": "OK",
+                                            "code": 200,
+                                            "_postman_previewlanguage": "json",
+                                            "header": [
+                                                {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                }
+                                            ],
+                                            "cookie": [],
+                                            "responseTime": null,
+                                            "body": "{\n \"cartID\": 7403430,\n \"customerID\": -34374397,\n \"productID\": 37007688,\n \"quantity\": -92994254,\n \"cartTime\": 17610842,\n \"productModifier\": \"dolore consectetur minim laborum ut\",\n \"orderID\": \"culpa aliquip proident velit in\"\n}"
+                                        },
+                                        {
+                                            "id": "cff13cfd-1bb2-4564-bf33-b2c3e81283e7",
+                                            "name": "Unexpected error",
+                                            "originalRequest": {
+                                                "method": "PUT",
+                                                "header": [
+                                                    {
+                                                        "description": "Added as a part of security scheme: basic",
+                                                        "key": "Authorization",
+                                                        "value": "Basic <credentials>"
+                                                    }
+                                                ],
+                                                "url": {
+                                                    "raw": "{{baseUrl}}/carts/:cartID/:productID/:productModifier/:quantity",
+                                                    "host": [
+                                                        "{{baseUrl}}"
+                                                    ],
+                                                    "path": [
+                                                        "carts",
+                                                        ":cartID",
+                                                        ":productID",
+                                                        ":productModifier",
+                                                        ":quantity"
+                                                    ],
+                                                    "variable": [
+                                                        {
+                                                            "key": "cartID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the cart"
+                                                        },
+                                                        {
+                                                            "key": "productID",
+                                                            "value": "12114183",
+                                                            "description": "(Required) ID of the product"
+                                                        },
+                                                        {
+                                                            "key": "productModifier",
+                                                            "value": "irure est",
+                                                            "description": "(Required) Modification of product"
+                                                        },
+                                                        {
+                                                            "key": "quantity",
+                                                            "value": "12114183",
+                                                            "description": "(Required) Quantity of products"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "status": "Bad Request",
+                                            "code": 400,
+                                            "_postman_previewlanguage": "json",
+                                            "header": [
+                                                {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                }
+                                            ],
+                                            "cookie": [],
+                                            "responseTime": null,
+                                            "body": "{}"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "id": "16a998c4-1ed5-4af5-ab26-6593cf77ae03"
+                        },
+                        {
+                            "name": "/carts/:cartID",
+                            "id": "80e426d1-1186-4508-b94f-df174eace32e",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts/:cartID",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts",
+                                        ":cartID"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "cartID",
+                                            "value": "12114183",
+                                            "description": "(Required) ID of the cart"
+                                        }
+                                    ]
+                                },
+                                "description": "Get cart based on ID"
+                            },
+                            "response": [
+                                {
+                                    "id": "1d0ae22f-182a-4d74-b52a-1b7c7498f62c",
+                                    "name": "Get cart info",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"cartID\": 7403430,\n \"customerID\": -34374397,\n \"productID\": 37007688,\n \"quantity\": -92994254,\n \"cartTime\": 17610842,\n \"productModifier\": \"dolore consectetur minim laborum ut\",\n \"orderID\": \"culpa aliquip proident velit in\"\n}"
+                                },
+                                {
+                                    "id": "1b7ff9a8-ec25-4e89-9f34-80f38a50f77e",
+                                    "name": "Unexpected error",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Bad Request",
+                                    "code": 400,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "/carts/:cartID",
+                            "id": "a0f7344b-edd7-4528-b0c6-291de0aa4534",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts/:cartID",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts",
+                                        ":cartID"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "cartID",
+                                            "value": "12114183",
+                                            "description": "(Required) ID of the cart"
+                                        }
+                                    ]
+                                },
+                                "description": "Delete cart based on ID"
+                            },
+                            "response": [
+                                {
+                                    "id": "865c750e-c44b-41a0-8ff0-9cc224dc5de5",
+                                    "name": "Delete cart info",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "text",
+                                    "header": [
+                                        {
+                                            "disabled": false,
+                                            "description": {
+                                                "content": "Deleted all carts",
+                                                "type": "text/plain"
+                                            },
+                                            "key": "x-next",
+                                            "value": "irure est"
+                                        },
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "text/plain"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": ""
+                                },
+                                {
+                                    "id": "7660359d-3aa7-4714-bb52-d19b8aae70d7",
+                                    "name": "Unexpected error",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Bad Request",
+                                    "code": 400,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "/carts/:cartID/orders",
+                            "id": "c00b08be-c435-474a-9668-cd723cf486e2",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts/:cartID/orders",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts",
+                                        ":cartID",
+                                        "orders"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "cartID",
+                                            "value": "12114183",
+                                            "description": "(Required) ID of the cart"
+                                        }
+                                    ]
+                                },
+                                "description": "Checkout cart based on ID"
+                            },
+                            "response": [
+                                {
+                                    "id": "1c18b8e7-849f-46d8-9fd6-063e925c0fad",
+                                    "name": "Checkout cart",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID/orders",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID",
+                                                "orders"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"cartID\": 7403430,\n \"customerID\": -34374397,\n \"productID\": 37007688,\n \"quantity\": -92994254,\n \"cartTime\": 17610842,\n \"productModifier\": \"dolore consectetur minim laborum ut\",\n \"orderID\": \"culpa aliquip proident velit in\"\n}"
+                                },
+                                {
+                                    "id": "9b51c3ea-15f9-4d2d-b6b6-40dad2fe6a6f",
+                                    "name": "Unexpected error",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID/orders",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID",
+                                                "orders"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Bad Request",
+                                    "code": 400,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "/carts/:cartID/:cartTime",
+                            "id": "0c9b4793-287d-428b-acc2-49a5cf1cd53c",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts/:cartID/:cartTime",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts",
+                                        ":cartID",
+                                        ":cartTime"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "cartID",
+                                            "value": "12114183",
+                                            "description": "(Required) ID of the cart"
+                                        },
+                                        {
+                                            "key": "cartTime",
+                                            "value": "12114183",
+                                            "description": "(Required) How long the cart has been alive"
+                                        }
+                                    ]
+                                },
+                                "description": "Track Cart Status"
+                            },
+                            "response": [
+                                {
+                                    "id": "e403ebef-72e7-4da8-afc0-c07828e27aca",
+                                    "name": "Track uptime of cart",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID/:cartTime",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID",
+                                                ":cartTime"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                },
+                                                {
+                                                    "key": "cartTime",
+                                                    "value": "12114183",
+                                                    "description": "(Required) How long the cart has been alive"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"cartID\": 7403430,\n \"customerID\": -34374397,\n \"productID\": 37007688,\n \"quantity\": -92994254,\n \"cartTime\": 17610842,\n \"productModifier\": \"dolore consectetur minim laborum ut\",\n \"orderID\": \"culpa aliquip proident velit in\"\n}"
+                                },
+                                {
+                                    "id": "9a7df46a-2bae-41c5-9aca-98868ddd24ab",
+                                    "name": "Unexpected error",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/carts/:cartID/:cartTime",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "carts",
+                                                ":cartID",
+                                                ":cartTime"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "cartID",
+                                                    "value": "12114183",
+                                                    "description": "(Required) ID of the cart"
+                                                },
+                                                {
+                                                    "key": "cartTime",
+                                                    "value": "12114183",
+                                                    "description": "(Required) How long the cart has been alive"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Bad Request",
+                                    "code": 400,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{}"
+                                }
+                            ]
+                        }
+                    ],
+                    "id": "8ac1074a-1278-49de-824a-dcdbe2c67a50"
+                },
+                {
+                    "name": "/carts",
+                    "id": "d4485192-c17f-453e-b40e-626c9d001e1a",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/carts?cartID=12114183",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "carts"
+                            ],
+                            "query": [
+                                {
+                                    "description": "(Required) ID of the cart",
+                                    "key": "cartID",
+                                    "value": "12114183"
+                                }
+                            ]
+                        },
+                        "description": "Create a user's cart"
+                    },
+                    "response": [
+                        {
+                            "id": "221ebfad-27a1-4191-81de-1a163434b450",
+                            "name": "Cart Successfully Created",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts?cartID=12114183",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "cartID",
+                                            "value": "12114183"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"cartID\": 7403430,\n \"customerID\": -34374397,\n \"productID\": 37007688,\n \"quantity\": -92994254,\n \"cartTime\": 17610842,\n \"productModifier\": \"dolore consectetur minim laborum ut\",\n \"orderID\": \"culpa aliquip proident velit in\"\n}"
+                        },
+                        {
+                            "id": "66e8ea6b-22c9-4ad5-a243-f6347048c754",
+                            "name": "Unexpected error",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts?cartID=12114183",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "cartID",
+                                            "value": "12114183"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{}"
+                        }
+                    ]
+                },
+                {
+                    "name": "/carts",
+                    "id": "2b94e245-7db5-4152-9d60-1b769451e97a",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/carts",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "carts"
+                            ]
+                        },
+                        "description": "Get carts"
+                    },
+                    "response": [
+                        {
+                            "id": "3b950b4c-0477-42a3-b5c3-912f863db212",
+                            "name": "Successfully got all carts",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"cartID\": 53745720,\n  \"customerID\": -3266242,\n  \"productID\": 49789085,\n  \"quantity\": 25846085,\n  \"cartTime\": 26672460,\n  \"productModifier\": \"amet non\",\n  \"orderID\": \"ut\"\n },\n {\n  \"cartID\": 79323117,\n  \"customerID\": -25050922,\n  \"productID\": -85755741,\n  \"quantity\": 69530651,\n  \"cartTime\": -1832002,\n  \"productModifier\": \"anim\",\n  \"orderID\": \"minim Ut\"\n }\n]"
+                        },
+                        {
+                            "id": "b5b3c500-a44a-4b02-a590-8d56cf045c41",
+                            "name": "Unexpected error",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts"
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{}"
+                        }
+                    ]
+                },
+                {
+                    "name": "/carts",
+                    "id": "179f4722-2281-465f-86e0-c05f956b2331",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/carts",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "carts"
+                            ]
+                        },
+                        "description": "Delete all carts"
+                    },
+                    "response": [
+                        {
+                            "id": "eb3c7216-9a80-4b6c-8ebe-ab7422a9c86e",
+                            "name": "Delete all carts",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "text",
+                            "header": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "Deleted all carts",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "x-next",
+                                    "value": "irure est"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/plain"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": ""
+                        },
+                        {
+                            "id": "e8e2403d-e0f8-41d0-bff1-0b6f1c299a9f",
+                            "name": "Unexpected error",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts"
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{}"
+                        }
+                    ]
+                },
+                {
+                    "name": "/carts",
+                    "id": "894a0301-5b98-45e5-8f1d-98679c9b10eb",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/carts",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "carts"
+                            ]
+                        },
+                        "description": "Update all carts"
+                    },
+                    "response": [
+                        {
+                            "id": "11fce0c5-bb34-4f28-b346-e9ec9ee436bd",
+                            "name": "List of All Carts Updated",
+                            "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"cartID\": 6953819,\n  \"customerID\": 60748633,\n  \"productID\": 79770005,\n  \"quantity\": -78825146,\n  \"cartTime\": 30697163,\n  \"productModifier\": \"i\",\n  \"orderID\": \"in aliquip\"\n },\n {\n  \"cartID\": -87752882,\n  \"customerID\": -80445096,\n  \"productID\": 66618444,\n  \"quantity\": -71634178,\n  \"cartTime\": -54402054,\n  \"productModifier\": \"est commodo occaecat amet\",\n  \"orderID\": \"in mollit\"\n }\n]"
+                        },
+                        {
+                            "id": "b1daa12a-bb4e-4f1a-b4f9-065815f49840",
+                            "name": "Unexpected error",
+                            "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/carts",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "carts"
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{}"
+                        }
+                    ]
+                }
+            ],
+            "id": "b6494163-143a-4583-9909-fec83b6bc108"
+        }
+    ],
+    "auth": {
+        "type": "basic",
+        "basic": [
+            {
+                "key": "username",
+                "value": "<Basic Auth Username>",
+                "type": "string"
+            },
+            {
+                "key": "password",
+                "value": "<Basic Auth Password>",
+                "type": "string"
+            }
+        ]
+    },
+    "variable": [
+        {
+            "id": "a5302a3a-765e-456b-848a-16dc411b47b3",
+            "key": "baseUrl",
+            "value": "https://www.tigerchow.com",
+            "type": "string"
+        }
+    ]
+}

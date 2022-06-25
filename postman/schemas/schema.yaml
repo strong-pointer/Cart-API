@@ -1,0 +1,352 @@
+openapi: 3.0.0
+info:
+  version: '1.0.0'
+  title: 'CartAPI'
+  description: |
+    ### An API to Track and Represent a Cart for a Customer
+    * Add item(s) to cart
+    * Get cart by cart id
+    * Remove item(s) from cart
+    * Update cart - decrement/increment item quantity
+    * Emptying cart
+    * Add and remove promos
+    * Delete a cart
+    * Handles calculations
+    * Tracking how long a cart has been alive for
+servers:
+  - url: 'https://www.tigerchow.com'
+paths:
+  /carts:
+    post:
+      description: Create a user's cart
+      tags:
+        - user
+      parameters:
+        - name: cartID
+          in: query
+          description: ID of the cart
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Cart Successfully Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cart_Representation"
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+    get:
+      description: Get carts
+      tags:
+        - cart
+      responses:
+        '200':
+          description: Successfully got all carts
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/List_Of_Carts"
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+    delete:
+      description: Delete all carts
+      tags:
+        - cart
+      responses:
+        '200':
+          description: 'Delete all carts'
+          headers:
+            x-next:
+              description: Deleted all carts
+              schema:
+                type: string
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+    put:
+      description: Update all carts
+      tags:
+        - cart
+      responses:
+        '200':
+          description: List of All Carts Updated
+          content:
+              application/json:
+                schema:
+                    $ref: "#/components/schemas/List_Of_Carts"
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+  /carts/{cartID}:
+    get:
+      description: Get cart based on ID
+      tags:
+        - cart
+      parameters:
+        - name: cartID
+          in: path
+          description: ID of the cart
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: 'Get cart info'
+          content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Cart_Representation"
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+    delete:
+      description: Delete cart based on ID
+      tags:
+        - cart
+      parameters:
+        - name: cartID
+          in: path
+          description: ID of the cart
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Delete cart info
+          headers:
+            x-next:
+              description: Deleted all carts
+              schema:
+                type: string
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+  /carts/{cartID}/{productID}/{productModifier}:
+    post:
+      tags:
+        - cart
+      description: Product Modification
+      parameters:
+        - name: cartID
+          in: path
+          description: ID of the cart
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: productID
+          in: path
+          description: ID of the product
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: productModifier
+          in: path
+          description: Amount of product
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        '200':
+          description: Updated product modifier
+          content:
+              application/json:
+                schema:
+                    $ref: "#/components/schemas/Cart_Representation"
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+    delete:
+      description: Delete from cart
+      tags:
+        - cart
+      parameters:
+        - name: cartID
+          in: path
+          description: ID of the cart
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: productID
+          in: path
+          description: ID of the product
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: productModifier
+          in: path
+          description: Amount of product
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        '200':
+          description: Delete item from cart
+          headers:
+            x-next:
+              description: Delete item
+              schema:
+                type: string
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+
+              schema:
+                $ref: '#/components/schemas/400Error'
+  /carts/{cartID}/{productID}/{productModifier}/{quantity}:
+    put:
+      description: Update Product Quantity
+      tags:
+        - product
+      parameters:
+        - name: cartID
+          in: path
+          description: ID of the cart
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: productID
+          in: path
+          description: ID of the product
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: productModifier
+          in: path
+          description: Modification of product
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: quantity
+          in: path
+          description: Quantity of products
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Updated product quantity
+          content:
+              application/json:
+                schema:
+                    $ref: "#/components/schemas/Cart_Representation"
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+  /carts/{cartID}/cartTime:
+    get:
+      description: Track Cart Status
+      tags:
+        - time
+      parameters:
+        - name: cartID
+          in: path
+          description: ID of the cart
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Track uptime of cart
+          content:
+              application/json:
+                schema:
+                    $ref: "#/components/schemas/Cart_Representation/cartTime"
+        '400':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+components:
+  schemas:
+    Cart_Representation:
+      type: object
+      required:
+        - ID
+      properties:
+        cartID:
+            description: ID of a specific cart
+            type: integer
+            format: int64
+        customerID:
+            description: ID for a specific customer
+            type: integer
+            format: int64
+        productID:
+            description: ID of the specific product
+            type: integer
+            format: int64
+        quantity:
+            description: The amount of a specific product
+            type: integer
+            format: int32
+        cartTime:
+            description: Lifetime of a cart
+            type: integer
+            format: int32
+        productModifier:
+            description: Changes to a specific product
+            type: string
+        orderID:
+            description: ID for a specific order
+            type: string
+    List_Of_Carts:
+      description: An array of cart representations
+      type: array
+      items:
+        $ref: "#/components/schemas/Cart_Representation"
+    400Error:
+      description: Invalid request
+      type: object
+      properties:
+        message:
+          type: string
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+security:
+  - BasicAuth: []
