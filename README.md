@@ -1,4 +1,5 @@
-*Note: This is a copy of my repo from the org (Clemson 3720 Software Engineering Team Repositories -> Team6-Cart)*</br>
+*Note: This is a copy of my repo from the org (Clemson 3720 Software Engineering Team Repositories -> Team6-Cart)*</br></br>
+**Postman was used in our beginning steps in the creation of our API. This project led us down a rabbit-hole of knowledge with us gaining experience on how real companies build their API's in the "real world", and it was extremely great to work with such a talented team!**
 
 # Team 6: "Banana Slugs"
 ### Team Members: Hayden Strong, Dennis Huynh, Mackenzie Blue, Forrest Zach
